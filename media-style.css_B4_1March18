@@ -27,10 +27,6 @@ div#container-innerpage:before{display:block;content:" ";height:133px;margin-top
 .slides li picture img{display:inline-block;vertical-align:bottom;width:100%}
 .fee-banner-inner p{font-size:1.12em;line-height:inherit;}
 .fee-banner-inner img{max-width:100%;}
-.fraud-txt-img{width:100%;margin:4% auto 3%;} 
-.fraud-top-content{padding-top:7%}
-.fraud-top-content p{padding-bottom:20px}
-
 }
 
 @media all and (max-width:1599px) {
@@ -46,13 +42,9 @@ header > .row,.footer-top,.footer-btm {padding-left:2%; padding-right:2%;}
 .side-nav a {font-size:.78em;}
 .side-nav > li > a {padding:10px 20px;}
 .side-nav-child > li > a {padding:0 20px 0 50px;}
+.news-content {width:70%;}
 
 /* This media style use for 1366 to 1599 screen resolutions */
-}
-
-@media (min-width:1367px) and (max-width:1599px) {
-.fraud-txt-img{margin:3% auto 5%;} 
-.fraud-top-content{padding-top:6%}
 }
 
 @media (min-width:1280px) and (max-width:1365px) {
@@ -74,14 +66,8 @@ h3.all-caps {line-height:22px;}
 .sidebar {max-width:380px;}
 .tp-img-col {margin:0 5.8%;}
 .fee-banner-inner .colL{padding-top:0}
-.fee-banner-inner .link-more{margin-top:15%;} 
-.fraud-txt-img{width:80%;} 
-.fraud-top-content p{padding-bottom:20px}
-.container-innerpage.invest-fees{padding:0}
-.invest-fees .content-wrap.fullwidth{padding:0 30px}
-.invest-fees .address-wrap{width:26%;padding-right:30px}
-#custom-footer .footer-social-links{width:480px}
-
+.fee-banner-inner .link-more{margin-top:15%;}
+.footer-social-links li{width:46.5%}
 /* This media style use for 1280 to 1365 screen resolutions */
 }
 
@@ -115,6 +101,7 @@ nav{background:#032c46;position:relative}
 p{font-size:.89em;line-height:24px;padding-bottom:15px}
 .editor-content ul li,.editor-content ol li{font-size:.89em}
 .notification-top p{font-size:.72em}
+.news-content{width:60%}
 .invest .mm-list a{white-space:normal}
 .smart .mega-menu{width:880px}
 .smart .col-one,.smart .col-two{white-space:nowrap;max-width:none}
@@ -132,7 +119,8 @@ nav .main-menu .has-child.about{position:relative}
 .editor-content table{width:100%!important}
 .watch-video-btn{font-size:initial;width:172px;height:36px;padding:3px 0}
 .watch-video-btn img{width:13px;vertical-align:-2px}
-.post-date{position:relative;width:100%;text-align:left;margin-top:-50px;padding-bottom:20px}
+.post-date,.post-date+.share-icon{position:relative;width:100%;text-align:left}
+.post-date{margin-top:-50px}
 .addthis_inline_share_toolbox{display:inline-block;float:none;padding:15px 0;vertical-align:middle}
 #glossaysearch{width:84.5%}
 .tp-img-col{margin:0 3.95%}
@@ -141,48 +129,16 @@ nav .main-menu .has-child.about{position:relative}
 .feature-video-wrap h3{padding-top:10px}
 .video-col{padding:0 30px 30px 0}
 .widget-chk-1 a{padding:15px 12px}
+#feature-video-wrap{padding:0 41px 0 0}
 .fees-subscribe-wrap .nvkForm .col-md-6{width:34% !important;}
-.fees-subscribe-wrap .nvkForm .col-md-6+.col-md-6{width:44% !important;}
+.fees-subscribe-wrap .nvkForm .col-md-6+.col-md-6{width:45% !important;}
 .fees-subscribe-wrap .nvkForm .row > div.col-md-12{width:190px !important;padding-right:0 !important;}
+.ft-email-form ul{width:100%;}
+.footer-social-links.ft-email-form li{width:45%;display:inline-block;margin:8px;vertical-align:top}
 .footer-social-links{width:44%;}
+.footer-subscribe-wrap{width:95%;padding-top:25px;}
+.footer-social-links li{width:45.5%}
 .copywrap{position:relative;width:100%;text-align:right;float:right;padding-top:20px}
-.fraud-temp .report-nav{padding-right:15px;border-radius:0}
-.fraud-top-content{padding-top:50px;max-width:850px}
-.fraud-txt-img{margin:30px auto 50px;width:100%;}
-.fstep-ans-btn{width:250px;margin:0  10px}
-.low-risk .icon-wrap{width:418px;}
-.fraud-top-content p{font-size:1.22em;line-height:30px;}
-.fraud-step-list li a{font-size:1em}
-.fstep-inner h2{font-size:2em}
-.fstep-inner .icon-sprite{margin:-58px 0 0 -50px}
-.fstep-inner .icon-sprite.fstep1{background-position:0 -264px;width:178px;height:175px;}
-.fstep-inner .icon-sprite.fstep2{background-position:-186px -264px; width:190px;height:164px;margin-top:-86px}
-.fstep-inner .icon-sprite.fstep3{background-position:-383px -264px; width:188px;height:160px;margin-top:-86px}
-.fstep-inner .icon-sprite.fstep4{background-position:-578px -264px; width:189px;height:160px;margin-top:-86px}
-.fstep-inner h3{font-size:1.44em;line-height:36px}
-.fstep-inner p{font-size:1.1em}
-.fstep-linktxt{padding:25px 0 45px}
-.fstep-contact span.size28{font-size:1.33em}
-.fstep-contact span.size34{padding:10px 0 20px;font-size:1.55em;}
-.fstep-submit-tip-wrap .row > img{max-width:190px;}
-.fstep-linktxt a{font-size:1.44em}
-.feature-video-wrap .home-video-thumb{height:338px}
-.container-innerpage.invest-fees{padding:0}
-.invest-fees .content-wrap.fullwidth{padding:0 30px}
-.invest-fees .address-wrap{width:320px;}
-.invest-fees .footer-social-links{width:480px}
-.invest-fees .page-title{font-size:2em}
-.invest-fees .copywrap{padding-top:0}
-.fee-banner-inner .colL{width:60%}
-.step-col-wrap{margin:0 -15px}
-.news-wrap{width:32.9%}
-.form-horizontal .info-content{left:-424px;top:40px}
-.form-horizontal .info-content:before{left:428px;top:-17px;transform:rotate(90deg)}
-.res-sec-heading img{width:150px;margin-right:40px}
-.res-sec-heading p{font-size:2.55em;line-height:72px}
-.res-col-wrap{margin-right:15px}
-#custom-footer .footer-social-links{width:480px}
-
 
 /* This media style use for 1024 to 1279 screen resolutions */
 }
@@ -243,13 +199,14 @@ h6{font-size:.89em}
 .search-result-wrap{padding-top:25px}
 .editor-content ul.paging{right:40px;top:10px}
 .share-icon{right:20px}
-.rc-inner{width:52%;margin-bottom:10px}
+.rc-inner{width:52.6%;margin-bottom:10px}
 .rc-inner:nth-child(odd){margin-left:-19px}
 .rc-inner:nth-child(even){margin-right:-19px}
 .notification-top p{font-size:.56em;width:96%}
+.news-img{margin:0 0 12px 0}
+.news-content{width:100%;padding:0}
 .select-group select{font-size:.83em}
 .editor-content.no-padding{padding:35px 0 0}
-.videw-temp .editor-content.no-padding{padding:35px 20px 0}
 .event-calender-top .left,.event-calender-top .right{float:none;width:100%;padding:0}
 .event-calender-top .left{padding-bottom:20px}
 .event-calender-top .page-title,.mf-wrap-top .page-title{padding:0 0 15px}
@@ -290,7 +247,7 @@ h6{font-size:.89em}
 .pq-btn-wrap,.pquiz-progressbar-wrap,.pq-radio-questions{padding-left:30px;padding-right:30px}
 .video-col{width:50%}
 .video-temp-top .col-md-6{width:100%;float:none}
-.feature-video-wrap{margin:auto;padding:20px 28px}
+.feature-video-wrap{max-width:480px;margin:auto;padding:20px 28px}
 .feature-video-wrap h3{padding-top:0}
 .feature-video-wrap .col-md-5,.feature-video-wrap .col-md-7{padding:0;width:100%}
 .pq-result-topwrap .col-md-3,.pq-result-topwrap .col-md-9{padding:0 15px}
@@ -312,7 +269,7 @@ h6{font-size:.89em}
 .featured-row .well-personality:before{border-bottom:12px solid #687b7b;border-right:12px solid transparent}
 .prsonlt-wrap tr{border:0!important}
 .prsonlt-wrap .row{padding-bottom:10px}
-#feature-video-wrap{padding:0}
+#feature-video-wrap{padding:0 15px}
 .main.prsonlt-wrap{padding:0}
 .prsonlt-wrap h2{padding:0 0 30px 0}
 .prsonlt-wrap .featured-row{margin-bottom:30px}
@@ -327,6 +284,7 @@ h6{font-size:.89em}
 .holiday-video-wrap.video-col{height:416px;border-width:20px}
 .fees-subscribe-wrap form > div{padding-right:25px;}
 .fees-subscribe-wrap form > div.es_button{width:155px;padding-right:0;}
+.fee-banner-inner .colL{width:100%;padding-bottom:30px}
 .fees-subscribe-wrap .nvkForm .col-md-6{width:30% !important;}
 .fees-subscribe-wrap .nvkForm .col-md-6+.col-md-6{width:43% !important;}
 .fees-subscribe-wrap .nvkSubmitButton button{font-size:15px !important}
@@ -335,76 +293,12 @@ h6{font-size:.89em}
 .footer-subscribe-wrap h3{max-width:220px;}
 .footer-subscribe-wrap .nvkSubmitButton button{padding:2px !important}
 .footer-subscribe-wrap .nvkContent .row{margin:0 !important}
-.footer-social-links ul{float:none;width:100%}
-.footer-social-links li{width:45%;display:inline-block;margin:8px;vertical-align:top}
-.footer-subscribe-wrap{width:95%;padding-top:25px;}
+.footer-social-links ul{float:none}
 .footer-subscribe-wrap .nvkContent .block-outer .inner-sortable .block-inner{padding:0 !important}
 .footer-subscribe-wrap .nvkContent .form-group{text-align:left}
 input.header-search-field{width:81%}
-.fraud-top-content h1{font-size:1.66em}
-.fraud-top-content{max-width:100%;padding:40px 40px 0}
-.fraud-top-content p{font-size:1em;line-height:24px}
-.fraud-txt-img{margin:20px auto 15px}
-.fraud-step-list li a{font-size:.72em}
-.fraud-step-content{padding-bottom:60px}
-.fstep-inner{width:100%}
-.fstep-inner h3{font-size:1.33em;line-height:30px}
-.fstep-ans-btn, .fstep-submit-btn a,.fstep-take-quiz,.fstep-submit-tip{font-size:1em;height:42px;line-height:38px;border-radius:15px;}
-.fstep-take-quiz,.fstep-submit-tip{padding:0 36px 0 15px;right:10px;top:-21px}
-.fstep-take-quiz:after,.fstep-submit-tip:after{width:17px;height:13px;background-position:-1272px -212px;}
-.active .fstep-take-quiz:after,.active .fstep-submit-tip:after{background-position:-1272px -198px;}
-#jsstep1 .fstep-take-quiz{width:220px}
-#jsstep3 .fstep-submit-tip{width:330px}
-.fstep-quiz-wrap.active, .fstep-submit-tip-wrap.active{padding:60px 30px 70px}
-.fstep-ans-btn{width:180px}
-.fstep-ques{font-size:1em}
-.fquiz-result-btn{bottom:-20px}
-.fstep-ans-btn.fb:after{background-position: -1257px -162px}
-.fstep-ans-btn.tw:after{background-position: -1257px -130px}
-.fstep-inner .icon-sprite.search-reg{background-position:-1262px -94px;vertical-align:-3px;width:35px;height:28px}
-.fstep-inner a.visitied .icon-sprite.search-reg{background-position:-1262px -240px;}
-.fstep-submit-btn a{width:230px}
-.fstep-submit-tip-wrap .fstep-submit-btn a{width:242px;}
-.fstep-submit-btn a.btn-report{font-size:0.66em;padding:6px 10px;line-height:14px}
-.icon-wrap:before{width:72px;height:62px;top:10px}
-.low-risk .icon-wrap{width:232px}
-.medium-risk .icon-wrap{width:214px}
-.high-risk .icon-wrap{width:194px}
-.low-risk .icon-wrap:before{background-position:-1027px -360px}
-.medium-risk .icon-wrap:before{background-position:-1027px -296px}
-.high-risk .icon-wrap:before{background-position:-1027px -232px}
-.icon-wrap{padding-left:86px}
-.icon-wrap strong{font-size:1em;line-height:24px}
-.icon-wrap span{font-size:.8em;padding-left:0;line-height:normal}
-.feature-video-wrap .home-video-thumb{height:360px}
-.invest-fees .page-title{font-size:1.6em;margin-bottom:50px;padding:15px}
-.fee-banner-inner{padding-top:35px}
-.fee-banner-inner .colL{padding:20px 30px 52px 30px;max-width:460px}
-.fee-banner-inner .row img{max-width:300px}
-img.lp-dwnload{width:120px}
-.invest-fees .content-wrap.fullwidth,.invest-fees .editor-content{padding:0}
-.invest-fees .footer-social-links,.invest-fees .address-wrap{float:none;margin:auto;padding:0}
-.invest-fees .address-wrap{width:280px;text-align:center;}
-.invest-fees .copywrap{text-align:center;padding-top:20px}
-.step-col{width:30%}
-.page-title{padding:25px 20px 15px 20px}
-.breadcrumb{padding:10px 20px 25px 20px}
-.archive-wrap .select-group{right:0}
-.content-wrap > .row, .editor-content, .related-content-wrap{padding:30px 20px 0}
-.news-wrap{width:49.5%}
-.post-date{margin-top:-20px}
-.share-icon{right:0;position:relative;padding-bottom:20px}
-.videw-temp .share-icon{top:0}
-.info-content::before{transform:rotate(90deg);}
-.roi-result-wrap .info-content{right:-350px;top:40px}
-.roi-result-wrap .info-content::before {right:357px;top:-17px}
-
 
 /* This media style use for 768 to 1023 screen resolutions */
-}
-
-@media all and (max-width:960px) {
-.special-device-note{display:block;color:#f00}
 }
 
 @media all and (max-width:767px) {
@@ -434,10 +328,11 @@ nav{padding-top:0}
 .be-colR{padding:0}
 .be-colL-inner,.be-colR-inner,.fraudster-colL{padding:35px}
 .fraudster-wrap{padding:20px 0 0}
+.footer-social-links li{width:46%}
 .footer-social-links ul{margin:0}
 .breadcrumb{padding:6px 25px 20px 25px}
 .page-title{padding:25px 25px 15px 25px;font-size:2.23em}
-.content-wrap>.row,.editor-content,.related-content-wrap{padding-left:20px;padding-right:20px;margin-top:30px}
+.content-wrap>.row,.editor-content,.related-content-wrap{padding-left:25px;padding-right:25px;margin-top:30px}
 .editor-content{margin-top:0}
 .container-innerpage{padding-bottom:35px}
 .editor-content .wp-pagenavi{right:20px}
@@ -455,6 +350,7 @@ p{font-size:.78em;padding-bottom:10px}
 .editor-content ul.paging{right:25px}
 .event-info p{line-height:24px}
 .notification-top p{line-height:16px}
+.select-group .select-wrap{margin:0 0 15px 0;float:none}
 .editor-content th{vertical-align:top}
 .editor-content th,.editor-content table td{padding:5px 8px;line-height:24px;font-size:.78em}
 .event-calender-top .left{padding-bottom:10px}
@@ -471,9 +367,9 @@ p{font-size:.78em;padding-bottom:10px}
 .sidebar{max-width:380px}
 h1{font-size:2.23em}
 h2{font-size:1.67em}
-h3{font-size:1em}
-h4{font-size:.92em}
-h5{font-size:.92em}
+h3{font-size:.89em}
+h4{font-size:.83em}
+h5{font-size:.83em}
 h6{font-size:.83em}
 .fraudster-colR{padding:0 35px;width:100%}
 ul.list-filter{width:60%}
@@ -525,14 +421,13 @@ h3.all-caps{padding:5px 10px}
 .event-calender-wrap #tabs-2{display:block!important}
 .editor-content table#event-list-view td{float:none}
 .featured-img{width:100%;max-width:100%;margin:0 0 10px 0}
-.archive-wrap .select-group{width:100%;top:0;position:relative;}
-.select-group .select-wrap,.select-group .gotoCalDate-btn{margin:0 15px 10px 0;}
+.select-group .gotoCalDate-btn{float:none;width:188px;margin:0 0 15px 0}
 .sg-label{float:none}
 .header-mobile-search{margin-top:14px;width:auto}
 .pquiz-grn-box{padding:20px}
 .pquiz-grn-box p{font-size:.88em}
 .glosry-srch-wrap form,.glsbtn{float:none}
-.glsbtn{display:inline-block}
+.glsbtn{margin-top:20px;display:inline-block}
 .glosry-srch-wrap{padding-bottom:25px}
 .showhideaccordiondata .gls-dt,.showhideaccordiondata .gls-dd{border:0;text-align:left}
 .showhideaccordiondata .gls-dd{border-bottom:2px solid #85abae}
@@ -542,10 +437,10 @@ h3.all-caps{padding:5px 10px}
 .fees-subscribe-wrap form > div.es_button{margin:auto;}
 .fees-subscribe-wrap form .es_textbox::before {font-size:12px;}
 .investfee-qa-wrap > h3{padding:30px;}
-.fee-banner-inner .colL{width:100%;padding:15px 30px 40px 30px;}
-.fee-banner-inner .row img{margin:50px 0 0}
+.fee-banner-inner{padding:10px 15px 5px}
+.fee-banner-inner .colL{max-width:420px;}
 .fee-banner-inner .link-more{width:auto;font-size:14px;padding:8px 15px;margin:20px 0 0}
-img.lp-dwnload{width:90px}
+.fee-banner-inner img{margin:auto;width:100%;}
 .fee-banner-inner p{font-size:0.88em;}
 .fees-subscribe-wrap h3{font-size:1.33em}
 .fees-subscribe-wrap .nvkForm .col-md-6{width:100% !important;}
@@ -553,54 +448,6 @@ img.lp-dwnload{width:90px}
 .fees-subscribe-wrap .nvkForm .row > div{padding:0 0 20px 0 !important;}
 .fees-subscribe-wrap .nvkForm .row > div.col-md-12,.fees-subscribe-wrap .nvkForm .row > div.nvkValidationMessage{padding:0 !important}
 .footer-btm ul{display:none}
-.fstep-inner h2{font-size:1.44em}
-.fstep-inner .icon-sprite{margin:-46px 0 0 -36px}
-.fstep-inner .icon-sprite.fstep1{background-position:0 -450px;width:136px;height:134px;}
-.fstep-inner .icon-sprite.fstep2{background-position:-141px -450px; width:146px;height:125px;margin-top:-50px}
-.fstep-inner .icon-sprite.fstep3{background-position:-291px -450px; width:144px;height:122px;margin-top:-50px}
-.fstep-inner .icon-sprite.fstep4{background-position:-440px -450px; width:144px;height:122px;margin-top:-50px}
-.fraud-step-list li{width:50%}
-.fraud-temp .report-nav{padding:2px 10px}
-.fraud-temp .report-nav a{padding-left:0}
-.fraud-temp .icon-arrowRight{background-position:-94px -88px}
-.fraud-temp .report-nav .icon{margin:0}
-.fraud-main-img{max-height:100% !important;height:100% !important;}
-.fraud-main-img > img{display:none}
-.fraud-top-content{position:relative;background:url(images/fraud-quiz-bg-popup.jpg) center top no-repeat; background-size:cover;padding-top:65px;padding-bottom:70px}
-.fraud-txt-img{margin:25px auto 20px}
-.icon-scroll-down{background-position:-1114px -470px}
-.fraud-step-content{padding-top:90px}
-.fstep-inner h3{font-size:1em}
-.fstep-inner p{font-size:.83em;line-height:24px}
-.fstep-ans-btn{width:136px;margin:0 6px}
-.fresult-content a{padding-right:0}
-.fresult-content a:after{display:none}
-.fquiz-result-btn .fquiz-result-btn .fstep-ans-btn{font-size:.83}
-.fstep-linktxt a{font-size:1.11em}
-.fstep-linktxt{padding:10px 0 25px}
-.fstep-contact{padding:25px 0}
-.fstep-submit-tip-wrap.active{padding:60px 20px 70px}
-.fstep-submit-tip-wrap .fstep-submit-btn a{margin:0;width:230px}
-.step-col-wrap{margin:auto;padding-bottom:20px}
-.step-col{width:100%;margin:10px auto;}
-.step-col-inner{height:auto !important}
-.news-wrap{width:100%;max-width:560px;margin:10px auto;float:none;display:block;padding:0}
-.news-img,.news-content h3{height:auto !important}
-.share-icon + .select-group{margin:10px 0 15px}
-.calculator-box.roi{width:100%;float:none;margin:20px auto;display:block;max-width:360px;}
-.editor-content .calculator-box.roi table tr{border:0}
-.calculator-box.roi input[type="submit"]{margin:10px 0 15px}
-.calculator-box.roi input#totalamout{margin-bottom:15px}
-.calculator-box.roi table td{text-align:center}
-.roi-result-wrap .info-content{right:-370px}
-.roi-result-wrap .info-content:before {right:377px}
-.mf-wrap > .row .grn-box{background:#9dbb47 !important}
-.mf-wrap > .row .dark-blue-box{background:#4e6968 !important}
-.invest-fees .res-wrapper .mf-wrap > .row{padding-bottom:20px}
-.invest-fees .res-wrapper .mf-wrap{padding-top:20px}
-.two-widget-wrap .colL, .two-widget-wrap .colR{width:100%;float:none;margin:auto;padding:0 0 30px 0}
-.feature-video-wrap .home-video-thumb{height:250px}
-
 /* This media style use for 561 to 767 screen resolutions */
 }
 
@@ -622,39 +469,11 @@ ul.paging {float:left; margin-top:20px;}
 .prsonlt-wrap h2{font-size:1.2em;}
 .holiday-video-wrap.video-col{height:298px;border-width:10px;}
 .Zebra_Tooltip .Zebra_Tooltip_Message{font-size:.78em;line-height:20px;}
-.fraud-step-content{padding-left:0;padding-right:0}
-.fstep-inner > .row{padding:0 20px}
-.fstep-quiz-wrap, .fstep-submit-tip-wrap{width:90%;margin:auto}
-.fstep-quiz-wrap.active, .fstep-submit-tip-wrap.active{width:100%}
-.fquiz-result-btn{position:relative;bottom:0;padding-top:30px}
-.fquiz-result-btn .fstep-ans-btn{width:40%}
-.fstep-ans-btn-retake{margin:0 80px 25px}
-.fstep-quiz-wrap.low-risk,.fstep-quiz-wrap.medium-risk,.fstep-quiz-wrap.high-risk, .fstep-submit-tip-wrap.active{padding-bottom:30px;}
-.fstep-submit-btn a,.fstep-submit-tip-wrap .fstep-submit-btn a{margin:10px 0}
-.fstep-ans-btn{font-size:.88em;margin:0;width:130px}
-.header-mobile-search {width:100%;}
-.fraud-temp header{height:168px}
-.fraud-temp{padding-top:168px}
-.invest-fees .footer-social-links{width:100%}
-.invest-fees .footer-social-links ul{text-align:center}
-h3.step-title span{height:120%}
-.ans-wrap{padding:20px 20px 0px}
-.select-group .select-wrap, .select-group .gotoCalDate-btn{width:100%;max-width:360px;float:none}
-.calculator-box.roi input#totalamout{width:60%}
-.roi-result-wrap .info-content{width:456px;right:-340px}
-.roi-result-wrap .info-content:before {right:347px}
-.form-horizontal .info-content{width:454px;left:-376px;}
-.form-horizontal .info-content:before{left:380px}
-
 /* This media style use for Portrait of iPhone 6 and smartphones */
 }
 
 @media all and (max-width:480px) {
 /* This media style use for Portrait of iPhone 5 and lower version */
-.fraud-temp{padding-top:148px} 
-.fraud-temp header{height:148px}
-.logo-wrap{max-width:225px;}
-.sticky .fraud-step-list{top:148px}
 .banner-content-box {padding:0 58px;}
 .banner-content-box h1 {font-size:1.44em; line-height:36px; margin-top:20%;}
 .footer-social-links {padding-bottom:15px;}
@@ -671,6 +490,7 @@ footer p, .watch-video-btn {font-size:.78em;}
 .mapp-layout {width:100% !important; margin:0;}
 .banner-content-box .link-more {font-size:initial; margin-bottom:60px;}
 .footer-quick-links {padding:30px 0 0; width:100%; text-align:center}
+.header-mobile-search {width:100%;}
 #glossaysearch {width:77%;}
 .ui-autocomplete.ui-menu{max-width:67%;}
 .pq-radio-answers{width:218px;}
@@ -678,21 +498,6 @@ footer p, .watch-video-btn {font-size:.78em;}
 .holiday-content-wrap{padding:0 20px;}
 .holiday-video-wrap.video-col{height:256px;}
 .footer-social-links.ft-email-form li{width:90%;}
-.fstep-ans-btn{font-size:.65em;line-height:30px;height:33px;width:100px} 
-.fquiz-result-btn .fstep-ans-btn{width:50%;margin:6px auto}
-.fraud-top-content h1{font-size:1.45em}
-.fstep-submit-tip-wrap .fstep-submit-btn a{width:280px}
-.page-title{padding:15px}
-.breadcrumb{padding:0px 15px 20px 15px}
-.video-temp-top{padding:0 0 20px 0}
-.feature-video-wrap{padding:15px}
-.fstep-submit-tip-wrap .fstep-submit-btn a{margin:0;width:180px}
-.roi-result-wrap .info-content{width:340px;right:-268px}
-.roi-result-wrap .info-content:before {right:274px}
-.form-horizontal .info-content{width:350px;left:-290px;}
-.form-horizontal .info-content:before{left:294px}
-.feature-video-wrap .home-video-thumb{height:230px}
-	
 /* This media style use for Portrait of iPhone 5 and lower version */
 }
 
@@ -711,22 +516,6 @@ footer p, .watch-video-btn {font-size:.78em;}
 .pq-btn-wrap button,
 .pq-btn-wrap button.prevquesionbtn {padding:.5rem;}
 .holiday-video-wrap.video-col{height:165px;}
-.fstep-ans-btn{width:50%;margin:6px 0}
-#jsstep3 .fstep-submit-tip{font-size:.8em;width:290px;right:0}
-.fstep-linktxt a{font-size:1em}
-.fraud-top-content{padding-left:15px;padding-right:15px;padding:55px 15px 60px}
-.fraud-top-content h1{font-size:1.33em}
-.fraud-txt-img{margin:20px auto 15px}
-.fraud-top-content p{font-size:.88em}
-.fstep-inner > .row{padding:0 15px}
-.calculator-box.roi{padding:15px 15px 28px 25px;border-radius:28px 12px 28px 8px}
-.calculator-box.roi h3{padding-bottom:15px}
-.roi-result-wrap .info-content{width:296px;right:-228px}
-.roi-result-wrap .info-content:before {right:234px}
-.form-horizontal .info-content{width:300px;left:-258px;}
-.form-horizontal .info-content:before{left:262px}
-.feature-video-wrap .home-video-thumb{height:200px}
-
 /* This media style use for Landscape of iPhone 6 and smartphones */
 }
 
@@ -736,7 +525,6 @@ footer p, .watch-video-btn {font-size:.78em;}
 .notification-top p {width:88%;}
 .slicknav_nav {top:86px;}
 .fee-wrap > div.fee-input{width:43%;}
-.feature-video-wrap .home-video-thumb{height:170px}
 /* This media style use for Landscape of iPhone 5 and lower version */
 }
 

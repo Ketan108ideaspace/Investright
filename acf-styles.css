@@ -1,0 +1,7 @@
+.acf-table > tbody > tr > td {border-width:4px 0 0 1px; border-color:#EDEDED;}
+.acf-repeater .acf-row-handle .acf-icon {display: block;}
+.acf-repeater .acf-row-handle .-collapse, .acf-repeater .acf-row-handle .-plus {background-color: #0073aa; color: #fff;}
+.acf-repeater .acf-row-handle .-minus {background-color: #F55E4F; color: #fff;}
+a.acf-icon.-minus:hover, a.acf-icon.-cancel:hover {background-color: #ebc9c5; color: #FFF;}
+.acf-editor-wrap iframe {height: 200px !important;}
+.acf-field textarea {height: 150px !important;}

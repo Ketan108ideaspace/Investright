@@ -379,6 +379,16 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder{
 input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 	color:#fff;
 }
+input#glossaysearch::-moz-placeholder{
+	color:#a7a9ac;
+	opacity:1
+}
+input#glossaysearch:-ms-input-placeholder{
+	color:#a7a9ac;
+}
+input#glossaysearch::-webkit-input-placeholder{
+	color:#a7a9ac;
+}
 .main-content-inside .content-area-inside img{ max-width:100%; width:auto; height:auto}
 
 
