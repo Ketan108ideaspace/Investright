@@ -8,7 +8,7 @@
         <h1 class="page-title"><?php _e( "Search Results:", "investright" ); ?> <?php echo $_REQUEST['s']; ?></h1>
         <?php
 			$nvPaged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
-			$nvWpQry = new WP_Query(array('s'=>$_GET['s'], 'paged'=>$nvPaged, 'order'=>'DESC'));
+			$nvWpQry = new WP_Query(array('s'=>$_GET['s'], 'paged'=>$nvPaged, 'order'=>'DESC', 'post_status' => 'publish', 'post_type'=> array('page','post')));
 			if ($nvWpQry->have_posts()) :
 		
 			$nvPerPage = get_query_var('posts_per_page');
@@ -34,13 +34,17 @@
 			  <h3><a href="<?php the_permalink();?>"><?php the_title()?></a></h3>
 			  <p class="date"><?php echo the_time( 'M d, Y g:i a' ); ?></p>
 			  <?php //echo strip_tags(the_excerpt());?>
-			  <?php the_advanced_excerpt('exclude_tags=p,img'); ?>
+			  <?php //the_excerpt('exclude_tags=p,img');
+				echo wp_trim_words( preg_replace( '|\[(.+?)\](.+?\[/\\1\])?|s', '', get_the_content()), 35, '...' );
+			  ?>
 			  </div>
 		  <?php } else { ?>			  
 			  <div class="search-result-wrap <?php echo get_post_type( get_the_ID()); ?>">
 			  <h3><a href="<?php the_permalink();?>"><?php the_title()?></a></h3>
 			  <?php //echo strip_tags(the_excerpt());?>
-			  <?php the_advanced_excerpt('exclude_tags=p,img'); ?>
+			  <?php //the_excerpt('exclude_tags=p,img');
+				echo wp_trim_words( preg_replace( '|\[(.+?)\](.+?\[/\\1\])?|s', '', get_the_content()), 35, '...' );
+			  ?>
 			  </div>
 		  <?php } ?>
          <?php endwhile;?>

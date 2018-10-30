@@ -3,16 +3,10 @@
 Template Name: New Quiz Landing Page
 */
 get_header();
-?><head>
-<meta charset="utf-8">
-<title>Take the Quiz</title>
-<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
-<!-- Additional Stylesheet for Quiz page -->
-<link href="<?php bloginfo( 'stylesheet_directory' ); ?>/take-the-quiz.css" rel="stylesheet" type="text/css">
-</head>
-
+?>
 <div class="main-wrapper">
 <div class="container-innerpage full-width">
+	<h1 class="hidden"><?php the_title(); ?> | BCSC InvestRight</h1>
     <div class="row">
       <article class="content-wrap">
         <div class="editor-content">

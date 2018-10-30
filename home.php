@@ -1,12 +1,26 @@
-<?php get_header(); ?>
+<?php
+/* 
+* Template Name: Home Page Template
+*/
+get_header();
+?>
 
 <!-- Banner Section -->
 <div class="banner-main-wrap">
 	<div class="row">
 		<?php
 			$nvFullCls = "";
-			if(ICL_LANGUAGE_CODE!="en") {
+			$ndGetLng = $_GET["lang"];
+			if($ndGetLng=="pa") {
+				$ndLng = "pa";
+			} else if($ndGetLng=="zh") {
+				$ndLng = "zh";
+			} else {
+				$ndLng = "en";
+			}
+			if($ndLng!="en") {
 				$nvFullCls = "full-width";
+				//$nvFullCls = "";
 			}
 		?>
 		<div class="banner-wrap <?php echo $nvFullCls; ?>">
@@ -15,14 +29,20 @@
 					<ul class="slides">   
 					<?php
 						wp_reset_postdata();
-						$newsAry = array( 'post_type' => 'banner', 
+						$bannerAry = array( 'post_type' => 'banner', 
 							'post_status' => 'publish', 
-							'posts_per_page' => 5,
-							'order' => 'ASC', 
-							'orderby' => 'post_date'
+							'order' => 'ASC',
+							'orderby' => 'post_date',
+							'meta_query' => array(
+								array(
+									'key' => 'banner_language_setting',
+									'value' => 'en',
+									'compare' => '='
+								)
+							),
 						);
 						  
-						$wp_query = new WP_Query($newsAry);
+						$wp_query = new WP_Query($bannerAry);
 						if($wp_query->have_posts()) :
 							while ($wp_query->have_posts()) : $wp_query->the_post();
 								$nvImage = wp_get_attachment_image_src( get_post_thumbnail_id( $data->ID ), 'large' );
@@ -64,10 +84,19 @@
 				</div>
 			</div>
 		</div>
-		<?php if(ICL_LANGUAGE_CODE=="en") { ?>
+		<?php
+			$ndGetLng = $_GET["lang"];
+			if($ndGetLng=="pa") {
+				$ndLng = "pa";
+			} else if($ndGetLng=="zh") {
+				$ndLng = "zh";
+			} else {
+				$ndLng = "en";
+			}
+			if($ndLng=="en") { ?>
 			<div class="latest-news-wrap">
 			  <div class="latest-news-inner">
-			  <h3><a href="<?php echo $site_url;?>/resources/investor-news/" title="Latest News"><?php _e( "Latest News", "investright" ); ?></a> <a href="<?php echo $site_url;?>/feed/?post_type=post" target="_blank" title="Latest News Feed"><span class="icon iconset icon-feed"></span></a></h3>
+			  <h3><a href="<?php echo $site_url;?>/investor-news/" title="Latest News"><?php _e( "Latest News", "investright" ); ?></a> <!--a href="<?php echo $site_url;?>/feed/?post_type=post" target="_blank" title="Latest News Feed"><span class="icon iconset icon-feed"></span></a--></h3>
 				<?php
 					echo wpb_latest_sticky();
 				?>
@@ -82,9 +111,14 @@
   
 	<!-- Two Column Wrap -->
 	<?php
-		$ndLng = ICL_LANGUAGE_CODE;
-		if($ndLng=="zh") {
+		//$ndLng = ICL_LANGUAGE_CODE;
+		$ndGetLng = $_GET["lang"];
+		if($ndGetLng=="pa") {
+			$ndLng = "pa";
+		} else if($ndGetLng=="zh") {
 			$ndLng = "zh-hant";
+		} else {
+			$ndLng = "en";
 		}
 		
 		$nvLink = of_get_option( 'rightblocklink_'.$ndLng );

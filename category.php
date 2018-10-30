@@ -14,7 +14,8 @@ $args = array(
 $children_pages = get_children( $args );
 
 $paged = get_query_var('paged') ? get_query_var('paged') : 1;
-if($_GET['category']!='' && $_GET['category']>0){
+
+/*if($_GET['category']!='' && $_GET['category']>0){
 	$cur_cat_id = $_GET['category'];
 	$args_cat = array(
 		'cat' => $cur_cat_id ,
@@ -24,7 +25,6 @@ if($_GET['category']!='' && $_GET['category']>0){
 	if($_GET['category']=='-1' && $_GET['category']!=""){
 		$args_cat = array(
 			'paged' => $paged,
-			
 		);
 	} else {
 		$cur_cat_id = get_cat_id( single_cat_title("",false) );
@@ -33,7 +33,12 @@ if($_GET['category']!='' && $_GET['category']>0){
 			'paged' => $paged,
 		);
 	}
-}
+}*/
+$cur_cat_id = get_cat_id( single_cat_title("",false) );
+		$args_cat = array(
+			'cat' => $cur_cat_id ,
+			'paged' => $paged,
+		);
 if($_GET['month']!='' || $_GET['month']!=0){
 	$args_cat['monthnum'] = $_GET['month'];
 }
@@ -130,32 +135,24 @@ if($end>$nvPosts) {
 				<div class="sg-label">Filter by category</div>
 				<div class="select-wrap">
 				<?php
-				
-				 $args = array(
-						  'show_option_all'    => '',
-						  'show_option_none' => __( 'All Categories' ),
-						  'option_none_value'  => '-1',
-						   'orderby'            => 'cat',
-						   'order'              => 'ASC',
-						   'show_count'         => 0,
-						   'hide_empty'         => 0,
-						   'child_of'           => 0,
-						   'exclude'            => '',
-						   'include'            => '',
-						   'echo'               => 1,
-						   'selected'           => $cur_cat_id,
-						   'hierarchical'       => 0,
-						   'name'               => 'cat',
-						   'id'                 => '',
-						   'class'              => 'postform',
-						   'depth'              => 0,
-						   'tab_index'          => 0,
-						   'taxonomy'           => 'category',
-						   'hide_if_empty'      => false,
-						   'value_field'	     => 'term_id',
-						); ?>
-				<?php wp_dropdown_categories( $args ); ?>
-				
+					$args1 = array(
+						'orderby' => 'id',
+						'hide_empty'=> 0,
+						'child_of' => 0,
+						'exclude' => '',
+						'include' => '',
+						'orderby' => 'cat',
+					);
+					
+					$categories = get_categories($args1);
+					echo '<select name="cat" id="cat" class="postform"><option value="-1">All Categories</option>';
+					foreach ($categories as $cat) {
+						$nvSel = "";
+						if($cur_cat_id==$cat->term_id) { $nvSel = 'selected'; }
+						?>
+						<option value="<?php echo $cat->term_id; ?>" data-cat-slug="<?php echo $cat->slug; ?>" <?php echo $nvSel; ?>><?php echo $cat->name; ?></option>
+					<?php } ?>
+					</select>
 				</div>
 				<button class="gotoCalDate-btn filter_articles_cate_go">GO</button>
 			</div>
@@ -187,7 +184,8 @@ if($end>$nvPosts) {
 				  </p>
 					<?php 
 					//the_excerpt();	
-                                        echo wp_trim_words( get_the_content(), 35, '...' );
+					echo wp_trim_words( preg_replace( '|\[(.+?)\](.+?\[/\\1\])?|s', '', get_the_content()), 35, '...' );
+					//echo "1->".add_filter( 'get_the_excerpt', 'strip_shortcodes', 20 );
 					?>
 				</div>
 			  </div>

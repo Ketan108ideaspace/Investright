@@ -125,6 +125,18 @@ function investright_register_meta_boxes( $meta_boxes )
 				'placeholder' => esc_html__( 'Menus', 'investright-backend' ),
 			),
 			array(
+				'name'        => esc_html__( 'Select menu (col 6)', 'investright-backend' ),
+				'id'          => "{$prefix}menu6",
+				'type'        => 'select',
+				// Array of 'value' => 'Label' pairs for select box
+				'options'     => $menu,
+				// Select multiple values, optional. Default is false.
+				//'multiple'    => false,
+				//'std'         => 'value2',
+				'placeholder' => esc_html__( 'Menus', 'investright-backend' ),
+			),
+			
+			array(
 				'name'             => esc_html__( 'Mega menu chiclets Image 1 (if Fraud Awareness menu then set image size 218X86 and other menu image size 144X85)', 'investright-backend' ),
 				'id'               => "{$prefix}imgadv1",
 				'type'             => 'image_advanced',

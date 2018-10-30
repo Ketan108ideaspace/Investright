@@ -10,8 +10,10 @@ get_header();
     <div class="row">
         <article class="content-wrap">
             <div class="calculator-header">
-                <h1>Investment Fee Calculator</h1>
-                <p>Think paying 1% more or less in fees won’t make much difference to your returns? Use this calculator to take a look at how fees impact your returns.</p>
+				<?php while (have_posts()) : the_post(); ?>
+					<h1><?php the_title(); ?></h1>
+					<?php the_content(); ?>
+				<?php endwhile; ?>
             </div>
             <div class="calculator-body">
                 <div class="pencil-graphics"><img src="<?php echo $template_url; ?>/images/pencil-graphics.png" alt="calculator - Invest Right"/></div>
@@ -23,14 +25,21 @@ get_header();
                                     <table>
                                         <tbody>
                                             <tr><th>TERM</th><th>20 years</th></tr>
-                                            <tr><td>INVESTED AMOUNT</td><td><input id="amout" type="number" value="20000" name="initial-investment" step="500" min="500" max="9999999" /> $</td></tr>
-                                            <tr><td><label id="label-tooltip" for="rate" ><div class="tooltip-hover">Expected average return over the life of the expected amount</div> AVERAGE ANNUAL RETURN</label></td><td><input id="rate" type="number" value="5" name="annual-rate" min="-5" max="15" step="0.1" /> %</td></tr>
-                                            <tr><td>FEE 1</td><td><input id="fee01" type="number" value="2" name="fee-1" step="0.1" min="0" /> %</td></tr>
-                                            <tr><td>FEE 2</td><td><input id="fee02" type="number" value="3" name="fee-2" step="0.1" min="0" /> %</td></tr>
-                                            <tr><td colspan="2" >
-						<input onClick="ga('send','event',{'eventCategory':'calculator_btn','eventAction':'click', 'eventLabel':'Investment Fee Calculator'});" name="take a look" type="submit" value="CALCULATE" id="sub-button"/><!--GA event tracking for the calculator button-->
-						</td>
-					    </tr>
+                                            <tr><td>INVESTED AMOUNT</td><td>$ <input id="amout" type="number" value="50000" name="initial-investment" step="500" min="500" max="9999999" /></td></tr>
+                                            <tr><td><label id="label-tooltip" for="rate" ><div class="tooltip-hover">Expected average return over the life of the expected amount</div> AVERAGE ANNUAL RETURN</label></td><td><input id="rate" type="number" value="5" name="annual-rate" min="-5" max="15" step="0.01" /> %</td></tr>
+                                            <tr><td colspan="2">
+												<div class="fee-wrap">
+														<div>FEE</div>
+														<div class="fee-input">
+                                                        	<input id="fee01" type="number" value="2.5" name="fee-1" step="0.01" min="0" /> %
+                                                        </div>
+														<div>VS</div>
+														<div class="fee-input">
+                                                        	<input id="fee02" type="number" value="1.5" name="fee-2" step="0.01" min="0" /> %
+                                                        </div>
+												</div>
+											</td></tr>
+											<tr><td colspan="2" ><input onClick="ga('send','event',{'eventCategory':'calculator_btn','eventAction':'click', 'eventLabel':'Investment Fee Calculator'});" name="take a look" type="submit" value="CALCULATE" id="sub-button"/></td></tr>
                                         </tbody>
                                     </table>
                                 </div>
@@ -104,17 +113,36 @@ get_header();
 		
 		jQuery('#amout').keyup(function() {
 			var nvamout = $(this).val();
-			if(nvamout>=500 && nvamout<9999999) {
+			
+			if($(this).val().length > 7){
+				val=$(this).val().substr(0,7);
+				$(this).val(val);
+			} else if($(this).val() <= 500){
+				
 			} else {
-				alert("Invested amount minimum 500 to maximum 9999999.");
 			}
+			
 		});
 		
-		$('#rate').keyup(function() {
+		jQuery('#amout').focusout(function() {
+			var nvamout = $(this).val();
+			if($(this).val() <= 500){
+				$(this).val("500");
+			}
+			
+		});
+		
+		$('#rate').keyup(function(event) {
 			var nvAvr = $(this).val();
 			if(nvAvr>=-5 && nvAvr<=15) {
 			} else {
-				alert("Average Annual Return minimum -5 to maximum 15.");
+				if(nvAvr>=15) {
+					$(this).val("15");
+				} else if(nvAvr<=-5) {
+					$(this).val("-5");
+				} else {
+					$(this).val("15");
+				}
 			}
 		});
 		

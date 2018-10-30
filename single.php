@@ -75,30 +75,24 @@ $res = get_all_posted_month();
 						  <button class="gotoCalDate-btn filter_articles_go">GO</button>
 						  <div class="select-wrap">
 							<?php
-							 $args = array(
-								'show_option_all'    => '',
-								'show_option_none' => __( 'All Categories' ),
-								'option_none_value'  => '-1',
-								'orderby'            => 'cat',
-								'order'              => 'ASC',
-								'show_count'         => 0,
-								'hide_empty'         => 0,
-								'child_of'           => 0,
-								'exclude'            => '',
-								'include'            => '',
-								'echo'               => 1,
-								'hierarchical'       => 0,
-								'name'               => 'cat',
-								'id'                 => '',
-								'class'              => 'postform filter_articles',
-								'depth'              => 0,
-								'tab_index'          => 0,
-								'taxonomy'           => 'category',
-								'hide_if_empty'      => false,
-								'value_field'	     => 'term_id',
+								$args1 = array(
+									'orderby' => 'id',
+									'hide_empty'=> 0,
+									'child_of' => 0,
+									'exclude' => '',
+									'include' => '',
+									'orderby' => 'cat',
 								);
-							wp_dropdown_categories( $args );
-							?>
+								
+								$categories = get_categories($args1);
+								echo '<select name="cat" id="cat" class="postform filter_articles"><option value="-1">All Categories</option>';
+								foreach ($categories as $cat) {
+									$nvSel = "";
+									if($cur_cat_id==$cat->term_id) { $nvSel = 'selected'; }
+									?>
+									<option value="<?php echo $cat->term_id; ?>" data-cat-slug="<?php echo $cat->slug; ?>" <?php echo $nvSel; ?>><?php echo $cat->name; ?></option>
+								<?php } ?>
+								</select>
 						</div>
 						  
 						  

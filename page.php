@@ -4,10 +4,16 @@ get_header();
 <!-- Body Content -->
 	<div class="container-innerpage">
     <div class="row">
-		<?php get_sidebar();
-	  	$nvDfCls = "";
-		if(ICL_LANGUAGE_CODE!="en") { $nvDfCls = "fullwidth";}
-		?>
+	<?php
+		get_sidebar();
+		$nvDfCls = "";
+		//$ndLng = ICL_LANGUAGE_CODE;
+		$ndLng = "";
+		if($ndLng!="en") {
+			//$nvDfCls = "fullwidth";
+			$nvDfCls = "";
+		}
+	?>
 		<article class="content-wrap <?php echo $nvDfCls; ?>">
 			<div class="breadcrumb"> 
 				<strong>You are here:</strong> 
@@ -29,6 +35,73 @@ get_header();
 					<!--div class="addthis_inline_share_toolbox"></div-->
 					</div>
 					<?php the_content();?>
+					
+					<?php 
+					// check if the repeater field has rows of data
+					if( have_rows('widget_layout') ):
+						while ( have_rows('widget_layout') ) : the_row();
+							// display a sub field value
+							$widget_type = get_sub_field('widget_type');
+							if($widget_type=="singlewidget") {
+								$widget_content_type = get_sub_field('widget_content_type');
+								$widget_title = get_sub_field('widget_title');
+								$widget_description = get_sub_field('widget_description');
+								
+								if($widget_content_type=="subscribe") {
+									if($widget_title!="") {
+										echo '<div class="widget-newsletter"><h3>'.$widget_title.'</h3><div class="widget-newsletter-inner">'.$widget_description.'</div></div>';
+									}
+								} else if($widget_content_type=="comment") {
+									if($widget_title!="") {
+										echo '<div class="widget-ques"><p>'.$widget_title.'</p><div class="widget-ques-inner" id="thankcmtid"><form><textarea rows="4" id="txtcommentid"></textarea><div class="nvkSubmitButton"><button type="button" class="btn btn-default" id="commentsubmitbtn">Submit</button></div></form></div></div>';
+									}
+								} else if($widget_content_type=="poll") {
+									if($widget_title!="") {
+										echo '<div class="widget-poll"><p>'.$widget_title.'</p><div class="widget-poll-inner">'.$widget_description.'</div></div>';
+									}
+								} else {}
+							} else {
+								$widget_content_type = get_sub_field('widget_content_type');
+								
+								$widget_title = get_sub_field('widget_title');
+								$widget_report_option_image = get_sub_field('widget_report_option_image');
+								$widget_report_option_link = get_sub_field('widget_report_option_link');
+								$second_widget_title = get_sub_field('second_widget_title');
+								$widget_description = get_sub_field('widget_description');
+								if($widget_content_type=="poll") {
+									echo '<div class="two-widget-wrap">
+										<div class="row">
+											<div class="colL">
+												<div class="img-widget"><a href="'.widget_report_option_link.'" target="_blank"> <img src="'.$widget_report_option_image.'"></a><span>'.$widget_title.'</span></div>
+											</div>
+											<div class="colR">
+												<div class="widget-poll">
+													<p>'.$second_widget_title.'</p>
+													<div class="widget-poll-inner">'.$widget_description.'</div>
+												</div>
+											</div>
+										</div>
+									</div>';
+								} else {
+									echo '<div class="two-widget-wrap">
+										<div class="row">
+											<div class="colL">
+												<div class="img-widget"><a href="'.widget_report_option_link.'" target="_blank"> <img src="'.$widget_report_option_image.'"></a><span>'.$widget_title.'</span></div>
+											</div>
+											<div class="colR">
+												<div class="widget-newsletter">
+													<h3>'.$second_widget_title.'</h3>
+													<div class="widget-newsletter-inner">'.$widget_description.'</div>
+												</div>
+											</div>
+										</div>
+									</div>';
+								}
+							}
+							echo '<div style="height:50px;"></div>';
+						endwhile;
+					endif; ?>
+					
 				</div>
 			<?php endwhile;?>
 			<?php

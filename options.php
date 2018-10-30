@@ -314,197 +314,25 @@ function optionsframework_options() {
 		'type' => 'upload'
 	);
 	
-	/*Home Page Info*/
 	$options[] = array(
-		'name' => __('Home Page-繁體中文', 'investright_admin'),
-		'type' => 'heading');
-		
-
-	$options[] = array(
-		'name' => __( 'Home Page Top Notification Bar :', 'investright_admin' ),
-		//'desc' => sprintf( __( 'You can also pass settings to the editor.  Read more about wp_editor in <a href="%1$s" target="_blank">the WordPress codex</a>', 'investright_admin' ), 'http://codex.wordpress.org/Function_Reference/wp_editor' ),
-		'id' => 'notification_msg_zh-hant',
-		'type' => 'editor',
-		'settings' => $wp_editor_settings
-	);
-	
-	$options[] = array(
-		'name' => __( 'Right hand side block below the banner :', 'investright_admin' ),
+		'name' => __( 'Twitter Card :', 'investright_admin' ),
 		//'desc' => __( 'A text input field with an HTML5 placeholder.', 'investright_admin' ),
-		'id' => 'rightblocktitle_zh-hant',
-		'placeholder' => 'Please enter title name',
+		'id' => 'twitter_title_en',
+		'placeholder' => 'Please enter tiwtter title',
 		'type' => 'text'
-	);
-	$options[] = array(
-		'id' => 'rightblocktxt_zh-hant',
-		'type' => 'editor',
-		'settings' => $wp_editor_settings
-	);
-	$options[] = array(
-		'id' => 'rightblocklink_zh-hant',
-		'placeholder' => 'Please enter link',
-		'type' => 'text'
-	);
-	$options[] = array(
-		'id' => 'rightblockcheckbox_zh-hant',
-		'desc' => __( 'Open a new window.', 'investright_admin' ),
-		'type' => 'checkbox'
-	);
-	
-	
-	$options[] = array(
-		'name' => __( 'Left hand side block below the banner :', 'investright_admin' ),
-		//'desc' => __( 'A text input field with an HTML5 placeholder.', 'investright_admin' ),
-		'id' => 'leftblocktitle_zh-hant',
-		'placeholder' => 'Please enter title name',
-		'type' => 'text'
-	);
-	$options[] = array(
-		'id' => 'leftblocktxt_zh-hant',
-		'type' => 'editor',
-		'settings' => $wp_editor_settings
-	);
-	$options[] = array(
-		'id' => 'leftblocklink_zh-hant',
-		'placeholder' => 'Please enter link',
-		'type' => 'text'
-	);
-	$options[] = array(
-		'id' => 'leftblockcheckbox_zh-hant',
-		'desc' => __( 'Open a new window.', 'investright_admin' ),
-		'type' => 'checkbox'
 	);
 	
 	$options[] = array(
-		'name' => __( 'Video block :', 'investright_admin' ),
-		//'desc' => __( 'A text input field with an HTML5 placeholder.', 'investright_admin' ),
-		'id' => 'videoblocktitle_zh-hant',
-		'placeholder' => 'Please enter title name',
+		'id' => 'twitter_description_en',
+		'placeholder' => 'Please enter tiwtter description',
 		'type' => 'text'
 	);
+	
 	$options[] = array(
-		'id' => 'videoblocktxt_zh-hant',
-		'type' => 'editor',
-		'settings' => $wp_editor_settings
-	);
-	$options[] = array(
-		'id' => 'videoblocklink_zh-hant',
-		'placeholder' => 'Please enter link',
-		'type' => 'text'
-	);
-	$options[] = array(
-		'id' => 'videoblockcheckbox_zh-hant',
-		'desc' => __( 'Open a new window.', 'investright_admin' ),
-		'type' => 'checkbox'
-	);
-	$options[] = array(
-		'name' => __( 'Video embeds url code:', 'investright_admin' ),
-		'id' => 'videoblockembeds_zh-hant',
-		'type' => 'editor',
-		'settings' => $wp_editor_settings
-	);
-	$options[] = array(
-		'name' => __('Video Thumbnail (688 x 443):', 'investright_admin'),
-		'id' => 'homepage_video_thumb_zh-hant',
+		'desc' => __('Please upload tiwtter card image', 'investright_admin'),
+		'id' => 'twitter_image_en',
 		'type' => 'upload'
 	);
-	
-	
-	/*Home Page Info*/
-	$options[] = array(
-		'name' => __('Home Page-ਪੰਜਾਬੀ', 'investright_admin'),
-		'type' => 'heading');
-		
-
-	$options[] = array(
-		'name' => __( 'Home Page Top Notification Bar :', 'investright_admin' ),
-		//'desc' => sprintf( __( 'You can also pass settings to the editor.  Read more about wp_editor in <a href="%1$s" target="_blank">the WordPress codex</a>', 'investright_admin' ), 'http://codex.wordpress.org/Function_Reference/wp_editor' ),
-		'id' => 'notification_msg_pa',
-		'type' => 'editor',
-		'settings' => $wp_editor_settings
-	);
-	
-	$options[] = array(
-		'name' => __( 'Right hand side block below the banner :', 'investright_admin' ),
-		//'desc' => __( 'A text input field with an HTML5 placeholder.', 'investright_admin' ),
-		'id' => 'rightblocktitle_pa',
-		'placeholder' => 'Please enter title name',
-		'type' => 'text'
-	);
-	$options[] = array(
-		'id' => 'rightblocktxt_pa',
-		'type' => 'editor',
-		'settings' => $wp_editor_settings
-	);
-	$options[] = array(
-		'id' => 'rightblocklink_pa',
-		'placeholder' => 'Please enter link',
-		'type' => 'text'
-	);
-	$options[] = array(
-		'id' => 'rightblockcheckbox_pa',
-		'desc' => __( 'Open a new window.', 'investright_admin' ),
-		'type' => 'checkbox'
-	);
-	
-	
-	$options[] = array(
-		'name' => __( 'Left hand side block below the banner :', 'investright_admin' ),
-		//'desc' => __( 'A text input field with an HTML5 placeholder.', 'investright_admin' ),
-		'id' => 'leftblocktitle_pa',
-		'placeholder' => 'Please enter title name',
-		'type' => 'text'
-	);
-	$options[] = array(
-		'id' => 'leftblocktxt_pa',
-		'type' => 'editor',
-		'settings' => $wp_editor_settings
-	);
-	$options[] = array(
-		'id' => 'leftblocklink_pa',
-		'placeholder' => 'Please enter link',
-		'type' => 'text'
-	);
-	$options[] = array(
-		'id' => 'leftblockcheckbox_pa',
-		'desc' => __( 'Open a new window.', 'investright_admin' ),
-		'type' => 'checkbox'
-	);
-	
-	$options[] = array(
-		'name' => __( 'Video block :', 'investright_admin' ),
-		//'desc' => __( 'A text input field with an HTML5 placeholder.', 'investright_admin' ),
-		'id' => 'videoblocktitle_pa',
-		'placeholder' => 'Please enter title name',
-		'type' => 'text'
-	);
-	$options[] = array(
-		'id' => 'videoblocktxt_pa',
-		'type' => 'editor',
-		'settings' => $wp_editor_settings
-	);
-	$options[] = array(
-		'id' => 'videoblocklink_pa',
-		'placeholder' => 'Please enter link',
-		'type' => 'text'
-	);
-	$options[] = array(
-		'id' => 'videoblockcheckbox_pa',
-		'desc' => __( 'Open a new window.', 'investright_admin' ),
-		'type' => 'checkbox'
-	);
-	$options[] = array(
-		'name' => __( 'Video embeds url code:', 'investright_admin' ),
-		'id' => 'videoblockembeds_pa',
-		'type' => 'editor',
-		'settings' => $wp_editor_settings
-	);
-	$options[] = array(
-		'name' => __('Video Thumbnail (688 x 443):', 'investright_admin'),
-		'id' => 'homepage_video_thumb_pa',
-		'type' => 'upload'
-	);
-	
 	
 	/*Home Page Info*/
 	$options[] = array(

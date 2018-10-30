@@ -23,7 +23,12 @@ $args = array(
       <?php
 		get_sidebar();
 		$nvDfCls = "";
-		if(ICL_LANGUAGE_CODE!="en") { $nvDfCls = "fullwidth";}
+		//$ndLng = ICL_LANGUAGE_CODE;
+		$ndLng = "";
+		if($ndLng!="en") {
+			//$nvDfCls = "fullwidth";
+			$nvDfCls = "";
+		}
 	  ?>
       <article class="content-wrap <?php echo $nvDfCls; ?>">
        <div class="breadcrumb"> <strong>You are here:</strong>  

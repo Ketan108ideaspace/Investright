@@ -15,16 +15,16 @@ if ( ! function_exists( 'embed_script_style' ) ) {
         /* Register & Enqueue Styles. */
 		wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css?family=Crimson+Text:400,400i,600,600i,700,700i');
 		wp_enqueue_style( 'my-font', $template_url.'/fonts/font-style.css',array(), '1.0.0', 'screen' );
-
+		
 		/* Register & Enqueue scripts. */
 		wp_enqueue_script('jquery-min', $template_url.'/js/jquery.min.js', false);
 		//wp_enqueue_script('addthis-min', '//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-57ff53ff8e87ad76', false);
 		
 		wp_enqueue_script('textresizer-js', $template_url.'/js/jquery.textresizer.js', true );
 		wp_enqueue_script('jquery.flexslider', $template_url.'/js/jquery.flexslider.js', true );
-		wp_enqueue_script('common-js', $template_url.'/js/custom.js', array('jquery'),'4.7.1', true);
+		wp_enqueue_script('common-js', $template_url.'/js/custom.js', array('jquery'),'4.7.2', true);
 		wp_enqueue_script('Validation-js', $template_url.'/js/jquery.validate.min.js', true );
-                wp_enqueue_script('custom-edit-js', $template_url.'/custom-edit.js', true );
+		//wp_enqueue_script('custom-edit-js', $template_url.'/custom-edit.js', true );
 		wp_enqueue_script('script-js', $template_url.'/js/script.js', true );
 		wp_enqueue_script('jquery.slicknav', $template_url.'/js/jquery.slicknav.js', false );
 		//wp_enqueue_script('googlemap-js', 'http://maps.googleapis.com/maps/api/js?key=AIzaSyBwxw8p_BftCvNwcHYHWht1yVIOvfQBje0', false );
@@ -40,7 +40,7 @@ if ( ! function_exists( 'embed_script_style' ) ) {
 			wp_enqueue_style( 'core', $template_url.'/jQueryAssets/jquery.ui.core.min.css', array(), '1.0.0');
 			wp_enqueue_style( 'theme', $template_url.'/jQueryAssets/jquery.ui.theme.min.css', array(), '1.0.0');
 			wp_enqueue_style( 'tabs', $template_url.'/jQueryAssets/jquery.ui.tabs.min.css', array(), '1.0.0');
-
+			
 			wp_enqueue_script( 'moment-js',$template_url.'/fullcalendar/lib/moment.min.js', array( 'jquery' ) );
 			wp_enqueue_script( 'fullcalendar-js',$template_url.'/fullcalendar/fullcalendar.min.js', array( 'jquery' ) );
 			wp_enqueue_script( 'datatable-js',$template_url.'/js/jquery.dataTables.min.js', array( 'jquery' ) );
@@ -51,7 +51,7 @@ if ( ! function_exists( 'embed_script_style' ) ) {
 			wp_enqueue_script('qtip', $template_url.'/js/jquery.qtip.min.js', array( 'jquery', 'imagesloaded' ), false, true );
 		}
 
-		if( is_page_template( 'template-test.php' ) || is_page_template( 'template-investright-fee-calculator-template.php' ) ){
+		if( is_page_template( 'template-arc.php' ) ||is_page_template( 'template-test.php' ) || is_page_template( 'template-roi.php' ) || is_page_template( 'template-investright-fee-calculator-template.php' ) ){
 			wp_enqueue_style( 'calculator-css',$template_url.'/calculator.css');
 		}
 
@@ -75,6 +75,7 @@ add_action( 'wp_enqueue_scripts', 'embed_script_style', 10 );
 
 register_nav_menus( array( 'Header_Menu' => __( 'Header Menu' ) ) );	// Header Menu
 register_nav_menus( array( 'Footer_Menu' => __( 'Footer Menu' ) ) );   // Header Menu
+register_nav_menus( array( 'Second_Footer_Menu' => __( 'Second Footer Menu' ) ) );   // Header Menu
 
 register_nav_menus( array( 'Investing_Menu' => __( 'Investing 101 Menu' ) ) );	// Investing 101 Menu
 register_nav_menus( array( 'Smarter_Investing_Menu' => __( 'Informed Investing Menu' ) ) );   // Informed Investing Menu
@@ -83,6 +84,8 @@ register_nav_menus( array( 'Resources_Menu' => __( 'Resources Menu' ) ) );   // 
 register_nav_menus( array( 'About_Menu' => __( 'About Menu' ) ) );	// About Menu
 register_nav_menus( array( 'primary' => __( 'Primary Menu') ) );
 register_nav_menus( array( 'site_map' => __( 'Site Map') ) );	//Site Map
+register_nav_menus( array( 'Punjabi_Menu' => __( 'Punjabi Menu') ) );	//Punjabi Menu
+register_nav_menus( array( 'Chinese_Menu' => __( 'Chinese Menu') ) );	//Chinese Menu
 
 /*
 // Adds a Event Dates meta box to the post editing screen
@@ -281,6 +284,28 @@ jQuery(document).ready(function() {
 
 <?php
 }
+
+
+//ACF custom delete popup created by ketan
+//add_action('acf/input/admin_head', 'my_acf_admin_head');
+
+function my_acf_admin_head() { ?>
+<script type="text/javascript">
+	(function($) {
+		acf.add_action('ready', function(){
+			$('body').on('click', '.acf-repeater .acf-row-handle .acf-icon.-minus', function( e ){
+				return confirm("Are you sure you want to delete this item?");
+			});
+		});
+	})(jQuery);	
+</script>
+<?php }
+
+//ACF custom uber styles created by ketan
+function custom_acf_repeater_colors() {
+     wp_enqueue_style( 'acf-uber-styles', get_template_directory_uri() . '/acf-styles.css' );
+}
+add_action('admin_head', 'custom_acf_repeater_colors');
 
 // Register Custom Post Type
 function Event() {
@@ -1306,13 +1331,13 @@ function prefix_save_featured_image_meta( $post_id, $post, $update ) {
 }
 add_action( 'save_post', 'prefix_save_featured_image_meta', 10, 3 );
 
-add_shortcode('iframe', 'ag_iframe');
+/*add_shortcode('iframe', 'ag_iframe');
 
 function ag_iframe($atts, $content) {
 	if (!$atts['width']) { $atts['width'] = 560; }
 	if (!$atts['height']) { $atts['height'] = 315; }
-	return '<iframe border="0" src="' . $atts['src'] . '?rel=0&amp;showinfo=0" width="' . $atts['width'] . '" height="' . $atts['height'] . '"></iframe>';
-}
+	return '<iframe border="0" src="' . $atts['src'] . '" width="' . $atts['width'] . '" height="' . $atts['height'] . '"></iframe>';
+}*/
 
 require( 'wptuts-editor-buttons/wptuts.php' );
 
@@ -1395,12 +1420,12 @@ $scheduledIDs = $wpdb->get_col( "SELECT`ID`FROM `{$wpdb->posts}` " . " WHERE ( "
                 }
 
 				*/
-function wpmlsupp_1706_reset_wpml_capabilities() {
+/*function wpmlsupp_1706_reset_wpml_capabilities() {
     if ( function_exists( 'icl_enable_capabilities' ) ) {
         icl_enable_capabilities();
     }
 }
-add_action( 'shutdown', 'wpmlsupp_1706_reset_wpml_capabilities' );
+add_action( 'shutdown', 'wpmlsupp_1706_reset_wpml_capabilities' );*/
 
 /*********** Create a shortcode for social share ********/
 // Add Shortcode
@@ -1408,9 +1433,9 @@ function social_share() {
 
 	$outpot.='<div class="share-icon editor">';
 	$outpot.='<span class="FPM17-shareTxt">SHARE   </span>';
-	$outpot.= "<span class='st_facebook_large' displayText='Facebook'></span><span class='seprator'></span>";
-	$outpot.="<span class='st_twitter_large' displayText='Tweet'></span><span class='seprator'></span>";
-	$outpot.="<span class='st_email_large' displayText='email'></span></div>";
+	$outpot.= "<span class='st_facebook_large'></span><span class='seprator'></span>";
+	$outpot.="<span class='st_twitter_large'></span><span class='seprator'></span>";
+	$outpot.="<span class='st_email_large'></span></div>";
         return $outpot;
 }
 add_shortcode( 'socialshare', 'social_share' );
@@ -1480,4 +1505,88 @@ function title_like_posts_where( $where, &$wp_query ) {
         $where .= ' AND ' . $wpdb->posts . '.post_title LIKE \'' . esc_sql( $wpdb->esc_like( $post_title_like ) ) . '%\'';
     }
     return $where;
+	die();
+}
+
+add_filter( 'tiny_mce_before_init', 'custom_mce_before_init' );
+function custom_mce_before_init( $settings ) {
+    $style_formats = array(
+        array(
+            'title' => 'Link More',
+            'selector' => 'a',
+            'classes' => 'link-more custom',
+        ),
+		array(
+            'title' => 'Link More Dark',
+            'selector' => 'a',
+            'classes' => 'link-more dark custom',
+        ),
+		array(
+            'title' => 'Blue Button',
+            'selector' => 'a',
+            'classes' => 'glsbtn custom',
+        ),
+		array(
+            'title' => 'Orange Button',
+            'selector' => 'a',
+            'classes' => 'btn btn-coolblue custom',
+        )
+    );
+    $settings['style_formats'] = json_encode( $style_formats );
+    return $settings;
+	exit();
+}
+
+add_action('wp_ajax_glossary_search_action', 'glossary_search_action_func');
+
+function glossary_search_action_func() {
+	global $wpdb,$page;
+	$nvWpQry = new WP_Query(array('s'=>$_POST['txtglossary'], 'post_status' => 'publish', 'order'=>'DESC', 'posts_per_page'=> -1, 'post_type'=> array('glossary')));    
+	$nvGlrData = "";
+	if($nvWpQry->found_posts!=0 && $_POST['txtglossary']!="") {
+		if ($nvWpQry->have_posts()) {
+			$nvGlrData .= '<table>';
+			while ($nvWpQry->have_posts()) : $nvWpQry->the_post();
+				$nvGlrData .= '<tr><td class="textbox gls-dt">'.ucfirst(get_the_title()).'</td><td class="textbox1 gls-dd">'.get_the_content().'</td></tr>';
+			endwhile;
+			$nvGlrData .= '</table>';
+		}
+	} else {
+		$nvGlrData .= "No result found.";
+	}
+	echo $nvGlrData;
+	exit();
+}
+
+/**
+ * Add a widget to the dashboard.
+ *
+ * This function is hooked into the 'wp_dashboard_setup' action below.
+ */
+function example_add_dashboard_widgets() {
+
+	wp_add_dashboard_widget(
+                 'example_dashboard_widget',         // Widget slug.
+                 'Fraud Quiz',         // Title.
+                 'example_dashboard_widget_function' // Display function.
+        );	
+}
+add_action( 'wp_dashboard_setup', 'example_add_dashboard_widgets' );
+
+/**
+ * Create the function to output the contents of our Dashboard Widget.
+ */
+function example_dashboard_widget_function() {
+	global $wpdb;
+	$myrows = $wpdb->get_results( "SELECT count(*) as total FROM ".$wpdb->prefix."quiz_result" );
+	echo "No. of times the fraud quiz has been taken = <strong>".$myrows[0]->total."</strong><br>";
+	
+	$myrowsred = $wpdb->get_results( "SELECT count(*) as total FROM ".$wpdb->prefix."quiz_result WHERE quiz_results='Red'" );
+	echo "Red result = <strong>".$myrowsred[0]->total."</strong><br>";
+	
+	$myrowsGreen = $wpdb->get_results( "SELECT count(*) as total FROM ".$wpdb->prefix."quiz_result WHERE quiz_results='Green'" );
+	echo "Green result = <strong>".$myrowsGreen[0]->total."</strong><br>";
+
+	$myrowsOrange = $wpdb->get_results( "SELECT count(*) as total FROM ".$wpdb->prefix."quiz_result WHERE quiz_results='Orange'" );
+	echo "Orange result = <strong>".$myrowsOrange[0]->total."</strong><br>";
 }
